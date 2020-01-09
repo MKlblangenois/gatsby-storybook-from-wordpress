@@ -7,3 +7,6 @@ yarn-error.log
 /public
 /storybook
 .DS_Store
+
+# Private configuration file
+.env
