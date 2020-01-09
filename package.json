@@ -2,11 +2,11 @@
   "name": "gatsby-starter-storybook",
   "description": "Gatsby Storybook Starter",
   "version": "1.1.0",
-  "author": "Marko Radak <mail@markoradak.com>",
+  "author": "Mediakod <coucou@mediakod.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/markoradak/gatsby-starter-storybook"
+    "url": "https://github.com/MKlblangenois/gatsby-storybook-from-wordpress"
   },
   "keywords": [
     "gatsby",
@@ -24,7 +24,8 @@
     "build:gatsby": "gatsby build",
     "build:storybook": "build-storybook -c .storybook -o storybook",
     "serve": "gatsby serve -o -p 8080",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "version": "auto-changelog -p && git add . && git commit -m 'update Changelog'"
   },
   "dependencies": {
     "css-loader": "^3.4.1",
@@ -39,7 +40,6 @@
     "gatsby-source-filesystem": "^2.1.21",
     "gatsby-transformer-sharp": "^2.2.13",
     "imports-loader": "^0.8.0",
-    "node-sass": "^4.13.0",
     "postcss-loader": "^3.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
@@ -56,11 +56,15 @@
     "@storybook/addons": "^5.1.11",
     "@storybook/react": "^5.1.11",
     "babel-plugin-styled-components": "^1.10.6",
+    "dotenv": "^8.2.0",
     "eslint": "^6.3.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.3",
+    "gatsby-plugin-sass": "^2.1.26",
+    "gatsby-source-graphql": "^2.1.30",
+    "node-sass": "^4.13.0",
     "sass-loader": "^8.0.0",
     "yarn-run-all": "^3.1.1"
   }
