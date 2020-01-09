@@ -16,6 +16,13 @@
     "eslint",
     "netlify"
   ],
+  "auto-changelog": {
+    "output": "CHANGELOG.md",
+    "template": "keepachangelog",
+    "unreleased": true,
+    "commitLimit": false,
+    "includeBranch": []
+  },
   "scripts": {
     "start": "run-p start:**",
     "start:gatsby": "gatsby develop -H 0.0.0.0 -o",
