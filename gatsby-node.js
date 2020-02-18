@@ -1,7 +1,42 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+const path = require(`path`);
 
-// You can delete this file if you're not using it
+exports.createPages = ({ graphql, actions, reporter }) => {
+   const { createPage } = actions;
+
+   // Define our template here
+   const templatePage = path.resolve(`src/templates/Pages/Page.js`);
+
+   // GraphQL allPages
+   return graphql(`
+      {
+         wpgraphql {
+            pages {
+               nodes {
+                  slug
+                  databaseId
+                  isFrontPage
+               }
+            }
+         }
+      }
+   `).then((result) => {
+      // Handle errors
+      if (result.errors) {
+         reporter.panicOnBuild(`Error while running GraphQL query.`);
+         return;
+      }
+
+      // Create pages for each page found in graphql
+      result.data.wpgraphql.pages.nodes.forEach((pageData) => {
+         let path = pageData.isFrontPage ? '/' : pageData.slug;
+
+         createPage({
+            path,
+            component: templatePage,
+            context: {
+               databaseId: pageData.databaseId
+            }
+         });
+      });
+   });
+};

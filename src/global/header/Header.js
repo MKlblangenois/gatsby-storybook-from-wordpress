@@ -8,7 +8,7 @@ const Header = () => (
       query={graphql`
          query GetMenuMain {
             wpgraphql {
-               menuItems(where: { location: MENU_MAIN }) {
+               menuItems(where: { location: MAIN }) {
                   edges {
                      node {
                         label

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import { removeDomaine } from '../../helpers/link.helpers';
 
 const Nav = (props) => {
@@ -7,7 +8,7 @@ const Nav = (props) => {
          <ul>
             {props.menuItems.map((menuItem, index) => (
                <li key={`mainMenuItem-${index}`}>
-                  <a href={removeDomaine(menuItem.node.url)}>{menuItem.node.label}</a>
+                  <Link to={removeDomaine(menuItem.node.url)}>{menuItem.node.label}</Link>
                </li>
             ))}
          </ul>
